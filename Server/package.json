@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "author": "EL-KHADIRI Abderrazak",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "moment": "^2.29.0",
+    "mqtt": "^4.2.1"
+  }
+}
