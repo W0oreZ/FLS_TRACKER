@@ -13,14 +13,15 @@ void FLS_SENSOR::main(void *p) {
     sensor.AllCap(&avgCap, &minCap, &maxCap, &error, 3000);
     if(error < (float)5)
     {
-      float variation = floor(10000*(avgCap-oldcap))/10000;
+      float variation = abs(floor(10000*(avgCap-oldcap))/10000);
       Serial.print(avgCap,3);
       Serial.print(" nF (");
       Serial.print(variation,3);
       Serial.println(")");
-      oldcap = avgCap;
+      
       if(variation > (float)0.002)
       {
+        oldcap = avgCap;
         ai1 = String(avgCap,3);
       }
     }
